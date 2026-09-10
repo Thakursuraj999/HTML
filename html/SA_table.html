@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GLA University Timetable</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Times New Roman", serif;
+        background: white;
+        color: black;
+    }
+
+    .timetable {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-weight: bold;
+    }
+
+    .timetable th,
+    .timetable td {
+        border: 1px solid #000;
+        text-align: center;
+        vertical-align: middle;
+        padding: 4px;
+    }
+
+    /* University Header */
+    .university {
+        font-size: 18px;
+        line-height: 1.15;
+        height: 24px;
+    }
+
+    .institute {
+        font-size: 16px;
+        height: 23px;
+    }
+
+    .department {
+        font-size: 15px;
+        height: 23px;
+    }
+
+    /* Information section */
+    .info {
+        font-size: 15px;
+        height: 38px;
+    }
+
+    .info-large {
+        height: 48px;
+        font-size: 15px;
+    }
+
+    /* Lecture header */
+    .lecture {
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .time {
+        height: 30px;
+        font-size: 13px;
+    }
+
+    /* Day column */
+    .day {
+        width: 7%;
+        font-size: 15px;
+    }
+
+    /* Period columns */
+    .period {
+        width: 9.3%;
+    }
+
+    /* Normal class */
+    .class {
+        background: #00ff00;
+        font-size: 14px;
+        line-height: 1.25;
+    }
+
+    /* Cyan laboratory */
+    .cyan {
+        background: #00ffff;
+        font-size: 13px;
+        line-height: 1.25;
+    }
+
+    /* Online class */
+    .online {
+        background: #c6e0b4;
+        font-size: 13px;
+        line-height: 1.25;
+    }
+
+    /* Section-wise labs */
+    .section {
+        background: white;
+        font-size: 12px;
+        line-height: 1.15;
+    }
+
+    .empty {
+        background: white;
+    }
+
+    .day-row {
+        height: 82px;
+    }
+
+    .wed-row {
+        height: 42px;
+    }
+
+    .thu-row {
+        height: 42px;
+    }
+
+    .fri-row {
+        height: 27px;
+    }
+
+    /* Print */
+    @media print {
+        @page {
+            size: A3 landscape;
+            margin: 5mm;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<table class="timetable" border="5" >
+
+    <!-- ================= UNIVERSITY HEADER ================= -->
+
+    <tr>
+        <td colspan="11" class="university">
+            GLA UNIVERSITY, MATHURA
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="11" class="institute">
+            Institute of Engineering &amp; Technology
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="11" class="department">
+            Computer Engineering &amp; Applications
+        </td>
+    </tr>
+
+    <!-- ================= COURSE INFORMATION ================= -->
+
+    <tr>
+        <td colspan="3" class="info">
+            Time Table: Odd Semester Programme
+        </td>
+
+        <td colspan="4" class="info">
+            Course: Bachelor of Technology
+        </td>
+
+        <td colspan="4" class="info">
+            Session: 2026-2027
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="info-large">
+            Section: 3SA (49 Non<br>
+            ICP Students)
+        </td>
+
+        <td colspan="2" class="info-large">
+            Semester: V
+        </td>
+
+        <td colspan="1" class="info-large">
+            Class Advisor:
+        </td>
+
+        <td colspan="4" class="info-large">
+            Mr. Rick Chatterjee
+        </td>
+
+        <td colspan="2" class="info-large">
+            w.e.f. 10/Aug/2026
+        </td>
+    </tr>
+
+    <!-- ================= LECTURE NUMBER ================= -->
+
+    <tr class="lecture">
+        <th class="day">
+            Lecture #
+        </th>
+
+        <th class="period">1</th>
+        <th class="period">2</th>
+        <th class="period">3</th>
+        <th class="period">4</th>
+        <th class="period">5</th>
+        <th class="period">6</th>
+        <th class="period">7</th>
+        <th class="period">8</th>
+        <th class="period">9</th>
+        <th class="period">10</th>
+    </tr>
+
+    <!-- ================= TIME ================= -->
+
+    <tr class="time">
+        <th>Day/Time</th>
+
+        <th>08:00-09:00</th>
+        <th>09:00-10:00</th>
+        <th>10:00-11:00</th>
+        <th>11:00-12:00</th>
+        <th>12:00-01:00</th>
+        <th>01:00-02:00</th>
+        <th>02:00-03:00</th>
+        <th>03:00-04:00</th>
+        <th>04:00-05:00</th>
+        <th>05:00-06:00</th>
+    </tr>
+
+    <!-- ================= MONDAY ================= -->
+
+    <tr class="day-row">
+
+        <td class="day">Monday</td>
+
+        <td class="empty"></td>
+        <td class="empty"></td>
+
+        <td class="class">
+            BCSE0612<br>
+            (All Student of SA)<br>
+            ABI-201
+        </td>
+
+        <td class="class">
+            BCSE0105<br>
+            ABI-201
+        </td>
+
+        <td class="class">
+            BCSC1012<br>
+            ABI-201
+        </td>
+
+        <td class="empty"></td>
+
+        <td colspan="2" class="class">
+            BCSE1251<br>
+            ABI-201
+        </td>
+
+        <td colspan="2" class="cyan">
+            3SA1/BCSE0642/ABI-126
+        </td>
+
+    </tr>
+
+    <!-- ================= TUESDAY ================= -->
+
+    <tr class="day-row">
+
+        <td class="day">Tuesday</td>
+
+        <td class="empty"></td>
+        <td class="empty"></td>
+
+        <td colspan="2" class="class">
+            PGDH0001<br>
+            ABI-201
+        </td>
+
+        <td class="class">
+            BCSC1012<br>
+            ABI-201
+        </td>
+
+        <td class="empty"></td>
+
+        <td class="class">
+            BCSE0612<br>
+            (All Student of SA)<br>
+            ABI-201
+        </td>
+
+        <td class="class">
+            BCSE0105<br>
+            ABI-201
+        </td>
+
+        <td class="empty"></td>
+        <td class="empty"></td>
+
+    </tr>
+
+    <!-- ================= WEDNESDAY ================= -->
+
+    <tr class="wed-row">
+
+        <td rowspan="2" class="day">
+            Wednesday
+        </td>
+
+        <td rowspan="2" class="empty"></td>
+        <td rowspan="2" class="empty"></td>
+        <td rowspan="2" class="empty"></td>
+
+        <td class="class" colspan="2">
+            3SA1/BCSE0133/<br>
+            ABI-201
+        </td>
+
+        <td rowspan="2" class="empty"></td>
+
+        <td rowspan="2" colspan="2" class="class">
+            BCSE0281<br>
+            ABI-201
+        </td>
+
+        <td rowspan="2" colspan="2" class="class">
+            PQRH0001<br>
+            ABI-201
+        </td>
+
+    </tr>
+
+    <tr class="wed-row">
+
+        <td colspan="2" class="class">
+            3SA2/BCSE0133/<br>
+            ABI-201
+        </td>
+
+    </tr>
+
+    <!-- ================= THURSDAY ================= -->
+
+    <tr class="thu-row">
+
+        <td rowspan="2" class="day">
+            Thursday
+        </td>
+
+        <td rowspan="2" class="empty"></td>
+        <td rowspan="2" class="empty"></td>
+        <td rowspan="2" class="empty"></td>
+
+        <td rowspan="2" colspan="2" class="class">
+            BCSE1251<br>
+            ABI-201
+        </td>
+
+        <td rowspan="2" class="empty"></td>
+
+        <td colspan="2" class="section">
+            3SA2/BCSE0642/ABI-112A
+        </td>
+
+        <td rowspan="2" class="online">
+            MBAM0002<br>
+            ABI-414(Dummy)<br>
+            (Online)
+        </td>
+
+        <td rowspan="2" class="empty"></td>
+
+    </tr>
+
+    <tr class="thu-row">
+
+        <td colspan="2" class="section">
+            3SA3/BCSE0642/ABI-112B
+        </td>
+
+    </tr>
+
+    <!-- ================= FRIDAY ================= -->
+
+    <tr class="fri-row">
+
+        <td rowspan="3" class="day">
+            Friday
+        </td>
+
+        <td rowspan="3" class="empty"></td>
+        <td rowspan="3" class="empty"></td>
+
+        <td rowspan="3" class="class">
+            BCSC1012<br>
+            ABI-201
+        </td>
+
+        <td rowspan="3" class="class">
+            BCSE0105<br>
+            ABI-201
+        </td>
+
+        <td rowspan="3" class="class">
+            BCSE0612<br>
+            (All Student of SA)<br>
+            ABI-201
+        </td>
+
+        <td rowspan="3" class="empty"></td>
+
+        <td class="section">
+            3SA1/BCSC1807/ABI-322
+        </td>
+
+        <td class="section">
+            3SA2/BCSC1807/ABI-323
+        </td>
+
+        <td rowspan="3" class="online">
+            MBAM0002<br>
+            ABI-414(Dummy)<br>
+            (Online)
+        </td>
+
+        <td rowspan="3" class="empty"></td>
+
+    </tr>
+
+    <tr class="fri-row">
+
+        <td colspan="2" class="section">
+            3SA3/BCSC1807/ABI-329
+        </td>
+
+    </tr>
+
+    <tr class="fri-row">
+
+        <td colspan="2" class="empty"></td>
+
+    </tr>
+
+    <!-- ================= SATURDAY ================= -->
+
+    <tr class="day-row">
+
+        <td class="day">
+            Saturday
+        </td>
+
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

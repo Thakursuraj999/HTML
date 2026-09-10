@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <style>
+        main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }   
+        h1 {
+            display: inline-block;
+            transform: translate(-40px , 40px);
+            transition: transform 3s ease-in-out;
+            transition-duration: 3s;
+            transition-delay: 3s;
+            transition-timing-function: ease;
+        }
+
+        h1:hover {
+            transform: translateX(100px) rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Gradient Background</h1>
+        <p>A gradient background is a visual effect that transitions smoothly between two or more colors. It can be used to create depth, highlight elements, or add visual interest to a webpage. CSS provides various ways to create gradient backgrounds, including linear and radial gradients.</p>
+    </main>
+</body>
+</html>
